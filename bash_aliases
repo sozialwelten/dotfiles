@@ -1,0 +1,7 @@
+alias visualisierung='cava'
+alias Bluesky='bluesky-trends'
+alias sound='cava'
+alias heic='for i in *.HEIC; do heif-convert "$i" "${i%.HEIC}.jpg"; done'
+alias background-noise-enterprise='play -n -c1 synth whitenoise lowpass -1 120 lowpass -1 120 lowpass -1 120'
+alias aufnahme='arecord -f cd -t wav aufnahmetest.wav'
+alias podcast='echo "toot post \"Beschreibung #Hashtag\" --media aufnahmetest.wav"'
