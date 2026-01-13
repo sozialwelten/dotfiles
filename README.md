@@ -5,21 +5,54 @@ Persönliche Systemkonfigurationsdateien und Backup wichtiger Einstellungen.
 - `persdict.dat` - Firefox persönliches Wörterbuch
 - `bash_aliases` - Bash-Aliase und Shortcuts
 - `.vimrc` - Vim-Konfiguration mit Plugins
+- `nixos/` - NixOS System-Konfiguration
 
 ## Verwendung
 
-**Firefox Wörterbuch wiederherstellen:**
+### NixOS-Konfiguration
+
+**Installation auf neuem NixOS System:**
+```bash
+# Repo klonen
+cd ~
+git clone git@github.com:sozialwelten/dotfiles.git
+
+# Symlink zur System-Config erstellen
+sudo ln -sf ~/dotfiles/nixos/configuration.nix /etc/nixos/configuration.nix
+
+# System neu bauen
+sudo nixos-rebuild switch
+```
+
+**Änderungen vornehmen:**
+```bash
+# Config bearbeiten
+vim ~/dotfiles/nixos/configuration.nix
+
+# System neu bauen
+sudo nixos-rebuild switch
+
+# Änderungen committen
+cd ~/dotfiles
+git add nixos/
+git commit -m "Update NixOS configuration"
+git push
+```
+
+**Hinweis:** Die `hardware-configuration.nix` ist gerätespezifisch. Bei neuem Gerät die vorhandene `/etc/nixos/hardware-configuration.nix` behalten oder anpassen.
+
+### Firefox Wörterbuch wiederherstellen
 ```bash
 cp persdict.dat ~/.mozilla/firefox/XXXXXXXX.default/
 ```
 
-**Bash-Aliase aktivieren:**
+### Bash-Aliase aktivieren
 ```bash
 cp bash_aliases ~/.bash_aliases
 source ~/.bashrc
 ```
 
-**Vim-Konfiguration installieren:**
+### Vim-Konfiguration installieren
 ```bash
 # 1. vim-plug Plugin Manager installieren
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
