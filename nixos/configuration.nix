@@ -115,6 +115,7 @@
   iftop
   htop  
   wget
+  keepassxc
  
   #Internet & Kommunikation
   filezilla
@@ -126,7 +127,7 @@
  
   #Wissenschaft & Forschung
   zotero
-  obsidian
+  logseq
   
   #Audio & Office
   audacity
