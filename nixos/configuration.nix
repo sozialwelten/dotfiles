@@ -104,7 +104,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  
+
   #Editoren & Entwicklung
   vim
   vscodium
@@ -113,18 +113,20 @@
 
   #System-Tools
   iftop
-  htop  
+  htop
   wget
   keepassxc
- 
+
   #Internet & Kommunikation
   filezilla
   signal-desktop
   tor-browser
   thunderbird
   google-chrome
-  element-desktop 
- 
+  element-desktop
+  gajim
+  deltachat-desktop
+
   #Wissenschaft & Forschung
   zotero
   logseq
